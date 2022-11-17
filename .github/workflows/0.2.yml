@@ -6,7 +6,10 @@ jobs:
   backup:
     name: Backup production Organization
     runs-on: ubuntu-latest
+    environment: 'My Environment Name'
     steps:
       - name: Authenticate to Git & checkout the repo
         uses: actions/checkout@v3
+      - name: Authenticate to Coveo
+        run: npx @coveo/cli auth:token -t ${{secrets.MY_API_KEY}}
       - run: echo "Hello world!"
