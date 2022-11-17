@@ -7,4 +7,6 @@ jobs:
     name: Backup production Organization
     runs-on: ubuntu-latest
     steps:
+      - name: Authenticate to Git & checkout the repo
+        uses: actions/checkout@v3
       - run: echo "Hello world!"
